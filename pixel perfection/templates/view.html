@@ -1,0 +1,23 @@
+<h2>All Bookings</h2>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Contact</th>
+<th>Event</th>
+<th>Date</th>
+<th>Service</th>
+<th>Hours</th>
+</tr>
+
+{% for b in bookings %}
+<tr>
+<td>{{ b[1] }}</td>
+<td>{{ b[2] }}</td>
+<td>{{ b[3] }}</td>
+<td>{{ b[4] }}</td>
+<td>{{ b[5] }}</td>
+<td>{{ b[6] }}</td>
+</tr>
+{% endfor %}
+</table>

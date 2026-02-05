@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background-color: #0D0D0D; color: #EAD8B1; padding-bottom: 100px; font-family: 'Montserrat', sans-serif;">
+
+    <div style="padding: 30px 10%;">
+        <a href="/dna-match" style="color: #C09853; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; display: inline-flex; align-items: center; transition: 0.3s;">
+            <span style="font-size: 1.5rem; margin-right: 10px;">←</span> Back to My Photographer Matches
+        </a>
+    </div>
+
+    <div style="display: flex; align-items: center; padding: 40px 10%; gap: 60px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 350px; border: 1px solid #C09853; padding: 15px;">
+            <img src="/static/images/photographers/{{ photographer.name | lower | replace(' ', '_') }}.jpg" 
+                 style="width: 100%; display: block;" alt="{{ photographer.name }}">
+        </div>
+        
+        <div style="flex: 1.2; min-width: 300px;">
+            <h1 style="font-family: 'Playfair Display', serif; color: #C09853; font-size: 3.5rem; margin-bottom: 5px;">{{ photographer.name }}</h1>
+            <p style="text-transform: uppercase; letter-spacing: 5px; font-size: 0.9rem; color: #FFFFFF; margin-bottom: 30px;">
+                Specialist: {{ photographer.style }} Aesthetics
+            </p>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px;">The Artist</h2>
+            <p style="line-height: 1.8; color: #FFFFFF; opacity: 0.8; font-size: 1.1rem;">
+                "I am {{ photographer.name }}. I am deeply passionate about {{ photographer.style | lower }} photography. 
+                My mission is to capture the {{ photographer.vibe | lower }} essence of every subject. 
+                I believe that every shot is a pursuit of perfection."
+            </p>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: row-reverse; align-items: center; padding: 80px 10%; gap: 60px; flex-wrap: wrap; background-color: #121212;">
+        <div style="flex: 1; min-width: 350px; border: 1px solid #C09853; padding: 15px;">
+            <img src="/static/images/portfolio/{{ photographer.name | lower | replace(' ', '_') }}_work.jpg" 
+                 style="width: 100%; display: block;" alt="Recent Work">
+        </div>
+
+        <div style="flex: 1.2; min-width: 300px; text-align: right;">
+            <h3 style="color: #C09853; font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 20px;">Passion & Vision</h3>
+            <p style="line-height: 1.8; color: #FFFFFF; opacity: 0.8; font-size: 1.1rem;">
+                "Beauty attracts the eye, but personality captures the heart."
+                Using {{ photographer.lighting | lower }} and a {{ photographer.editing | lower }} finish, 
+                I create visual stories that are truly catchy. This work in {{ photographer.setting | lower }} 
+                represents my dedication to the craft of {{ photographer.usage | lower }}.
+            </p>
+            
+            <a href="{{ url_for('login') }}" style="text-decoration: none;">
+                <button style="margin-top: 30px; padding: 15px 40px; background: #C09853; border: none; color: #0D0D0D; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; display: inline-block;">
+                    Book Artist
+                </button>
+            </a>
+            </div>
+    </div>
+
+</div>
+{% endblock %}

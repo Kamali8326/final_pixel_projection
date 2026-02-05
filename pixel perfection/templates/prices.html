@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="investment-wrapper" style="background-color: #1a1a1a; color: white; min-height: 80vh; padding: 60px 5%;">
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #d4af37; margin-bottom: 10px;">Investment</h2>
+    <div style="width: 60px; height: 1px; background-color: #d4af37; margin-bottom: 50px;"></div>
+    
+    <div class="pricing-row" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px;">
+        
+        <div class="price-card" style="flex: 1; text-align: center; border-right: 1px solid #333; padding: 20px;">
+            <h3 style="letter-spacing: 3px; font-weight: 300; font-size: 1.2rem; margin-bottom: 20px;">MINIMAL</h3>
+            <div style="font-size: 2rem; color: #d4af37; margin-bottom: 20px;">$200</div>
+            <ul style="list-style: none; padding: 0; line-height: 2; color: #bbb; font-size: 0.9rem;">
+                <li>1 Hour Session</li>
+                <li>20 Edited Photos</li>
+                <li>Online Gallery</li>
+                <li>Print Release</li>
+            </ul>
+            <a href="{{ url_for('contact') }}" class="book-btn">Book Now</a>
+        </div>
+
+        <div class="price-card" style="flex: 1; text-align: center; border-right: 1px solid #333; padding: 20px;">
+            <h3 style="letter-spacing: 3px; font-weight: 300; font-size: 1.2rem; margin-bottom: 20px;">STANDARD</h3>
+            <div style="font-size: 2rem; color: #d4af37; margin-bottom: 20px;">$450</div>
+            <ul style="list-style: none; padding: 0; line-height: 2; color: #bbb; font-size: 0.9rem;">
+                <li>2 Hour Session</li>
+                <li>50 Edited Photos</li>
+                <li>Online Gallery</li>
+                <li>Print Release</li>
+                <li>Outfit Consultation</li>
+            </ul>
+            <a href="{{ url_for('contact') }}" class="book-btn">Book Now</a>
+        </div>
+
+        <div class="price-card" style="flex: 1; text-align: center; padding: 20px;">
+            <h3 style="letter-spacing: 3px; font-weight: 300; font-size: 1.2rem; margin-bottom: 20px;">PREMIUM</h3>
+            <div style="font-size: 2rem; color: #d4af37; margin-bottom: 20px;">$800</div>
+            <ul style="list-style: none; padding: 0; line-height: 2; color: #bbb; font-size: 0.9rem;">
+                <li>4 Hour Session</li>
+                <li>All Good Photos</li>
+                <li>Online Gallery</li>
+                <li>Print Release</li>
+                <li>USB Drive + Prints</li>
+            </ul>
+            <a href="{{ url_for('contact') }}" class="book-btn">Book Now</a>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    /* Button Styling */
+    .book-btn {
+        display: inline-block;
+        margin-top: 30px;
+        color: #d4af37;
+        text-decoration: none;
+        border-bottom: 1px solid #d4af37;
+        padding-bottom: 5px;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: 0.3s;
+    }
+    .book-btn:hover {
+        color: white;
+        border-bottom-color: white;
+    }
+
+    /* Remove border on last card for mobile */
+    @media (max-width: 768px) {
+        .pricing-row { flex-direction: column; }
+        .price-card { border-right: none !important; border-bottom: 1px solid #333; margin-bottom: 20px; }
+    }
+</style>
+{% endblock %}

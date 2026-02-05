@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Photography DNA Match | Pixel Perfection{% endblock %}
+
+{% block content %}
+<style>
+    .dna-btn {
+        display: block;
+        width: 100%;
+        background: #1A1A1A;
+        border: 1px solid #333;
+        color: white;
+        padding: 15px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .dna-btn:hover {
+        border-color: #C09853;
+        background: #C09853;
+        color: #0D0D0D;
+    }
+    /* Grid for results once the quiz is done */
+    #results-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+    .match-card {
+        background: #121212;
+        padding: 25px;
+        border: 1px solid #C09853;
+        border-top: 5px solid #C09853;
+        text-align: center;
+        flex: 1;
+        min-width: 250px;
+        transition: transform 0.3s;
+    }
+    .match-card:hover {
+        transform: translateY(-10px);
+    }
+    .match-percentage {
+        font-size: 2rem;
+        color: #C09853;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+</style>
+
+<div style="background-color: #1a1a1a; min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
+    
+    <div id="quiz-container" style="background-color: #0D0D0D; color: #EAD8B1; padding: 50px; border-radius: 15px; border: 1px solid #C09853; width: 100%; max-width: 600px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        
+        <h2 id="q-title" style="color: #C09853; font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 20px;">
+            Find Your Photography DNA
+        </h2>
+        
+        <div id="options-container">
+            <p id="q-text" style="text-align: center; color: #EAD8B1;">Initializing your personalized experience...</p>
+            <div id="options" style="margin-top: 30px;">
+                </div>
+        </div>
+    </div>
+
+    <div id="results-area" style="display:none; width: 100%; max-width: 1200px;">
+        <h2 style="color: #C09853; font-family: 'Playfair Display', serif; text-align: center; font-size: 3rem;">Your Top Matches</h2>
+        <div id="results-container"></div>
+        <div style="text-align: center; margin-top: 40px;">
+            <button onclick="location.reload()" class="btn-outline" style="cursor:pointer; background: transparent; color: #C09853; border: 1px solid #C09853; padding: 10px 20px;">Retake Quiz</button>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/match_dna.js') }}"></script>
+{% endblock %}

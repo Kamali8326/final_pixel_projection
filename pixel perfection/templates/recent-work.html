@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Recent Work | Pixel Perfection{% endblock %}
+{% block content %}
+<body class="work-page-body" style="background-color: #1a1a1a; color: white; margin: 0;">
+    <header class="work-header" style="padding: 60px 10% 20px; background: #1a1a1a;">
+        <div class="recent-work-title-box" style="background-color: var(--card-purple); border-left: 5px solid var(--gold-cream); display: inline-block; padding: 20px 50px;">
+            <h1 style="color: var(--gold-cream); margin: 0; letter-spacing: 4px; font-weight: 300;">RECENT WORK</h1>
+        </div>
+    </header>
+
+    <main class="gallery-container" style="background: #1a1a1a; padding: 50px 10%;">
+        <section class="work-item-block" style="margin-bottom: 100px;">
+            <div class="work-text-info">
+                <h2 style="color: var(--gold-cream); font-family: 'Playfair Display', serif;">Vows in Veritas – Vows in Truth</h2>
+                <a href="{{ url_for('vows_in_veritas') }}" class="btn-fill" style="display: inline-block; margin-top: 15px; text-decoration: none;">SEE ALBUM</a>
+            </div>
+            <div class="image-overlap-group">
+                <img src="{{ url_for('static', filename='images/vows-main.jpg') }}" class="img-large" style="border: 1px solid #333;">
+                <img src="{{ url_for('static', filename='images/vows-detail.jpg') }}" class="img-small-overlap" style="border: 8px solid #1a1a1a; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+            </div>
+        </section>
+
+        <section class="work-item-block reverse">
+            <div class="work-text-info">
+                <h2 style="color: var(--gold-cream); font-family: 'Playfair Display', serif;">Aura — A Fragrance Reveal</h2>
+                <a href="{{ url_for('aura_reveal') }}" class="btn-fill" style="display: inline-block; margin-top: 15px; text-decoration: none;">SEE ALBUM</a>
+            </div>
+            <div class="image-overlap-group">
+                <img src="{{ url_for('static', filename='images/aura-main.jpg') }}" class="img-large" style="border: 1px solid #333;">
+                <img src="{{ url_for('static', filename='images/aura-detail.jpg') }}" class="img-small-overlap" style="border: 8px solid #1a1a1a; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+            </div>
+        </section>
+    </main>
+</body>
+
+<style>
+    .btn-fill {
+        padding: 12px 30px;
+        background: transparent;
+        color: var(--gold-cream);
+        border: 1px solid var(--gold-cream);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    .btn-fill:hover {
+        background: var(--gold-cream);
+        color: #1a1a1a;
+    }
+</style>
+{% endblock %}

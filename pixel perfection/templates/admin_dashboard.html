@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Pixel Perfection{% endblock %}
+
+{% block content %}
+<div class="glass-container" style="max-width: 800px;">
+    <h2>User Dashboard 🎨</h2>
+    <p>Welcome, <strong>{{ user }}</strong>!</p>
+    <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.2);">
+    
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
+        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; width: 200px;">
+            <h3>Upload</h3>
+            <p>Upload new images for processing.</p>
+            <button class="btn btn-secondary">Upload</button>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; width: 200px;">
+            <h3>History</h3>
+            <p>View your past transformations.</p>
+            <button class="btn btn-secondary">View</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

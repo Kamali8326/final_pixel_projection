@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="background-color: #0D0D0D; color: #EAD8B1; min-height: 80vh; padding: 60px 20px; font-family: 'Montserrat', sans-serif;">
+    <div style="max-width: 600px; margin: 0 auto; border: 1px solid #C09853; padding: 40px; background-color: #121212;">
+        <h2 style="font-family: 'Playfair Display', serif; color: #C09853; font-size: 2rem; text-align: center; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">
+            Event Booking
+        </h2>
+        <p style="text-align: center; font-size: 0.8rem; margin-bottom: 30px; opacity: 0.7;">PLEASE FILL IN YOUR EVENT CREDENTIALS</p>
+
+        <form method="POST" action="{{ url_for('event_details') }}" style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <label style="color: #C09853; font-size: 0.75rem; font-weight: bold;">CLIENT NAME</label>
+                <input type="text" name="client_name" required style="background: transparent; border: 1px solid #333; padding: 12px; color: #FFFFFF;">
+                
+                <label style="color: #C09853; font-size: 0.75rem; font-weight: bold;">CONTACT NUMBER</label>
+                <input type="tel" name="contact_number" required style="background: transparent; border: 1px solid #333; padding: 12px; color: #FFFFFF;">
+            </div>
+
+            <div style="display: flex; gap: 20px;">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                    <label style="color: #C09853; font-size: 0.75rem; font-weight: bold;">EVENT TYPE</label>
+                    <select name="event_type" style="background: #121212; border: 1px solid #333; padding: 12px; color: #FFFFFF;">
+                        <option value="Wedding">Wedding</option>
+                        <option value="Birthday">Birthday</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Portrait">Portrait</option>
+                        <option value="Engagement">Engagement</option>
+                        <option value="Fashion Show">Fashion Show</option>
+                        <option value="Concert">Concert</option>
+                        <option value="Graduation">Graduation</option>
+                    </select>
+                </div>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                    <label style="color: #C09853; font-size: 0.75rem; font-weight: bold;">EVENT DATE</label>
+                    <input type="date" id="eventDate" name="event_date" required style="background: transparent; border: 1px solid #333; padding: 11px; color: #FFFFFF;">
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 20px;">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                    <label style="color: #C09853; font-size: 0.75rem; font-weight: bold;">SERVICE TYPE</label>
+                    <select name="service_type" style="background: #121212; border: 1px solid #333; padding: 12px; color: #FFFFFF;">
+                        <option value="Photography">Photography Only</option>
+                        <option value="Videography">Videography Only</option>
+                        <option value="Both">Both</option>
+                    </select>
+                </div>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                    <label style="color: #C09853; font-size: 0.75rem; font-weight: bold;">DURATION (HOURS)</label>
+                    <input type="number" name="photog_hours" min="1" max="24" required style="background: transparent; border: 1px solid #333; padding: 12px; color: #FFFFFF;">
+                </div>
+            </div>
+
+            <button type="submit" style="margin-top: 20px; padding: 15px; background: #C09853; border: none; color: #0D0D0D; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 2px;">
+                Submit Order
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Prevent selecting past dates
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('eventDate').setAttribute('min', today);
+</script>
+{% endblock %}

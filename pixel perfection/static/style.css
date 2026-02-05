@@ -1,0 +1,244 @@
+/* --- 1. VARIABLES --- */
+:root {
+    --gold-cream: #EAD8B1;
+    /* Changed from Purple to Deep Brown Charcoal */
+    --bg-charcoal: #1a1614; 
+    --bg-brown-accent: #241f1c; 
+    --border-walnut: #3b322b;
+    --text-warm: #d1c7bc;
+    --transition: all 0.3s ease;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--bg-charcoal);
+    color: var(--text-warm);
+}
+
+/* --- 8. NAVIGATION & AUTH BUTTONS --- */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: var(--bg-charcoal);
+}
+
+.nav-links a {
+    color: var(--text-warm);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-outline {
+    border: 1px solid var(--gold-cream);
+    padding: 8px 20px;
+    color: var(--gold-cream);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.btn-fill {
+    /* Changed to Deep Brown */
+    background-color: var(--bg-brown-accent);
+    border: 1px solid var(--gold-cream);
+    padding: 8px 20px;
+    color: var(--gold-cream);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.btn-fill:hover, .btn-outline:hover {
+    background-color: var(--gold-cream);
+    color: var(--bg-charcoal); /* Text becomes charcoal on hover */
+}
+
+/* --- 9. OUR SERVICES --- */
+.services-section {
+    background-color: #1a1a1a; /* Your dark brown background */
+    min-height: 100vh;
+    padding: 80px 5%;
+    display: flex;
+    align-items: center;
+}
+
+.services-layout {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* Sidebar Styling */
+.services-sidebar {
+    flex: 0 0 250px;
+    color: #e6d5bc;
+}
+
+.our-text { font-family: serif; font-style: italic; font-size: 3rem; margin-bottom: -10px; }
+.services-heading { font-family: serif; font-size: 4rem; margin-bottom: 30px; }
+.service-names { list-style: none; padding: 0; opacity: 0.7; line-height: 2; }
+
+/* Gallery Container - This handles the horizontal spacing */
+.gallery-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Prevents images from moving to a new line */
+    align-items: flex-start; /* Keeps tops aligned */
+    gap: 30px; /* Adjust this number to increase/decrease space between photos */
+    padding-left: 40px;
+}
+
+/* Polaroid Styling */
+.polaroid {
+    background: white;
+    padding: 15px 15px 35px 15px;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.4);
+    width: 280px; /* Fixed width to keep size consistent */
+    flex-shrink: 0; /* Prevents images from getting squashed */
+}
+
+.polaroid img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.caption {
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    font-family: sans-serif;
+}
+
+/* Subtle Rotations as seen in your image */
+.p1 { transform: rotate(-2deg); }
+.p2 { transform: rotate(3deg); }
+.p3 { transform: rotate(-1deg); }
+/* --- 11. BOOKING PAGE SPECIFIC STYLES --- */
+.booking-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: var(--bg-brown-accent);
+    border: 1px solid var(--border-walnut);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.booking-title {
+    color: var(--gold-cream);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Input Fields Styling */
+.booking-form input, 
+.booking-form select, 
+.booking-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: var(--bg-charcoal);
+    border: 1px solid var(--border-walnut);
+    color: white;
+    font-family: var(--font-body);
+    outline: none;
+}
+
+.booking-form input:focus {
+    border-color: var(--gold-cream);
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--gold-cream);
+}
+
+/* --- RECENT WORK LAYOUT --- */
+/* ===== EDITORIAL WEDDING LAYOUT ===== */
+
+.editorial-section {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    min-height: 100vh;
+    background: #111;
+    position: relative;
+    overflow: hidden;
+}
+
+/* LEFT SIDE TEXT */
+.editorial-text {
+    padding-left: 120px;
+    padding-top: 260px;
+    color: #d6c18a;
+}
+
+.editorial-text h2 {
+    font-family: "Times New Roman", serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
+
+.editorial-text .btn {
+    display: inline-block;
+    padding: 10px 22px;
+    font-size: 0.75rem;
+    letter-spacing: 1.2px;
+    border: 1px solid #6f6aa8;
+    color: #cfc7ff;
+    text-decoration: none;
+}
+
+/* RIGHT IMAGE CANVAS */
+.editorial-images {
+    position: relative;
+    height: 100%;
+}
+
+/* MAIN VERTICAL IMAGE */
+.img-hero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 520px;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* OVERLAPPING DETAIL IMAGE */
+.img-detail {
+    position: absolute;
+    bottom: 90px;
+    right: 320px;
+    width: 360px;
+    height: 260px;
+    object-fit: cover;
+    background: #000;
+}

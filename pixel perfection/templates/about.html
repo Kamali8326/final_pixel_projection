@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}About | Pixel Perfection{% endblock %}
+{% block content %}
+<header class="hero" style="height: 60vh; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(rgba(26, 22, 37, 0.6), rgba(26, 22, 37, 0.6)), url"{{ url_for("static", filename='images/about-bg.jpg') }}"; background-size: cover;">
+    <div style="text-align: center;">
+        <p style="font-family: 'Pinyon Script'; color: var(--gold-cream); font-size: 2rem;">The Storyteller</p>
+        <h1 style="color: white; font-size: 3rem;">About Me</h1>
+    </div>
+</header>
+<section class="container" style="padding: 80px 10%; background: #1a1a1a;">
+    <div style="display: flex; flex-wrap: wrap; gap: 50px; align-items: center;">
+        <div style="flex: 1; min-width: 300px;">
+            <img src="{{ url_for('static', filename='images/portrait.jpg') }}" alt="The Photographer" style="width: 100%; border: 1px solid #d4af37; padding: 10px;">
+        </div>
+        <div style="flex: 1.5; min-width: 300px;">
+            <h2 style="color: var(--gold-cream); font-family: 'Playfair Display';">Behind the Lens</h2>
+            <p style="line-height: 1.8; color: #ddd;">Welcome to Pixel Perfection. I believe that every moment has a soul, and my mission is to capture it.</p>
+            <a href="{{ url_for('recent_work') }}" class="btn-fill" style="text-decoration: none;">View My Work</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

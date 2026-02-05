@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="services-section">
+    <div class="services-layout">
+        <div class="services-sidebar">
+            <h1 class="our-text">Our</h1>
+            <h2 class="services-heading">Services</h2>
+            <ul class="service-names">
+                <li>WEDDINGS</li>
+                <li>PRODUCT LAUNCH</li>
+                <li>BRAND ACTIVATION</li>
+                <li>FAMILY</li>
+                <li>CORPORATE EVENTS</li>
+                <li>FASHION & LIFESTYLE</li>
+            </ul>
+        </div>
+        
+        <div class="gallery-container">
+            <div class="polaroid p1">
+                <img src="{{ url_for('static', filename='images/wedding.jpg') }}" alt="Weddings">
+                <p class="caption">Weddings</p>
+            </div>
+            <div class="polaroid p2">
+                <img src="{{ url_for('static', filename='images/portraits.jpg') }}" alt="Portraits">
+                <p class="caption">Portraits</p>
+            </div>
+            <div class="polaroid p3">
+                <img src="{{ url_for('static', filename='images/family.jpg') }}" alt="Family">
+                <p class="caption">Family</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

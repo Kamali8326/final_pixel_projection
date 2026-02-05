@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel | Pixel Perfection{% endblock %}
+
+{% block content %}
+<div class="glass-container" style="border-color: #ff0055;">
+    <h2 style="color: #ff0055;">Admin Panel 🛡️</h2>
+    <p>Logged in as: <strong>{{ user }}</strong></p>
+    
+    <div style="text-align: left; margin-top: 20px;">
+        <p>✅ System Status: <strong>Online</strong></p>
+        <p>✅ Database: <strong>Connected</strong></p>
+        <p>✅ AWS Region: <strong>US-EAST-1</strong></p>
+    </div>
+
+    <button class="btn btn-primary" style="margin-top: 20px;">Manage Users</button>
+</div>
+{% endblock %}

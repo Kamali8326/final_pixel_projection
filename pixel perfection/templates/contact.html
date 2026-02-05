@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Pixel Perfection{% endblock %}
+
+{% block content %}
+<div style="background-color: #1a1a1a; min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 20px;">
+    
+    <form action="#" method="POST" style="width: 100%; max-width: 800px; display: flex; flex-direction: column; gap: 40px;">
+        
+        <div style="display: flex; gap: 40px; width: 100%;">
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <label style="color: #EAD8B1; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; margin-bottom: 10px;">First Name *</label>
+                <input type="text" name="first_name" required style="background: transparent; border: none; border-bottom: 1px solid #C09853; color: #FFFFFF; padding: 10px 0; outline: none; font-size: 1rem;">
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <label style="color: #EAD8B1; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; margin-bottom: 10px;">Last Name *</label>
+                <input type="text" name="last_name" required style="background: transparent; border: none; border-bottom: 1px solid #C09853; color: #FFFFFF; padding: 10px 0; outline: none; font-size: 1rem;">
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 40px; width: 100%;">
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <label style="color: #EAD8B1; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; margin-bottom: 10px;">Email *</label>
+                <input type="email" name="email" required style="background: transparent; border: none; border-bottom: 1px solid #C09853; color: #FFFFFF; padding: 10px 0; outline: none; font-size: 1rem;">
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <label style="color: #EAD8B1; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; margin-bottom: 10px;">Subject</label>
+                <input type="text" name="subject" style="background: transparent; border: none; border-bottom: 1px solid #C09853; color: #FFFFFF; padding: 10px 0; outline: none; font-size: 1rem;">
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; width: 100%;">
+            <label style="color: #EAD8B1; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; margin-bottom: 10px;">Leave me a message...</label>
+            <textarea name="message" rows="4" style="background: transparent; border: none; border-bottom: 1px solid #C09853; color: #FFFFFF; padding: 10px 0; outline: none; font-size: 1rem; resize: none;"></textarea>
+        </div>
+
+        <div style="width: 100%; text-align: center; margin-top: 20px;">
+            <button type="submit" style="background-color: transparent; border: 1px solid #C09853; color: #EAD8B1; padding: 15px 60px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s;">
+                Submit
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<style>
+    /* Hover effect for the button to stay consistent with your theme */
+    button:hover {
+        background-color: #C09853 !important;
+        color: #1a1a1a !important;
+    }
+</style>
+{% endblock %}

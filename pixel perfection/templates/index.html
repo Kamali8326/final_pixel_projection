@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Capture Your Moments</h1>
+        <p class="hero-subtitle">Book professional photographers for weddings, events, and portraits.</p>
+        <a href="{{ url_for('dna_match') }}" class="cta-primary">Find a Photographer</a>
+    </div>
+</header>
+
+<style>
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(26, 22, 37, 0.7), rgba(26, 22, 37, 0.7)), 
+                url("{{ url_for('static', filename='images/about-bg.jpg') }}") center/cover;
+}
+/* ... rest of your styles ... */
+
+</style>
+{% endblock %}

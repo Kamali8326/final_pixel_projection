@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Gallery | Aura Reveal{% endblock %}
+{% block content %}
+<div class="gallery-wrapper" style="background-color: #fcfaf8; min-height: 100vh; width: 100%; display: flex; flex-direction: column;">
+    
+    <header style="text-align: center; padding: 40px 0 20px 0;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin: 0; font-style: italic;">Aura</h1>
+        <p style="font-family: 'Montserrat', sans-serif; letter-spacing: 3px; font-size: 0.8rem; text-transform: uppercase; margin-top: 10px; color: #666;">A Fragrance Reveal Editorial</p>
+    </header>
+
+    <div class="gallery-grid" style="
+        display: grid; 
+        grid-template-columns: 1fr 1.8fr 1fr; 
+        grid-template-rows: 400px 400px; 
+        gap: 20px; 
+        padding: 0 40px 60px 40px;
+        max-width: 1600px;
+        margin: 0 auto;
+        width: 100%;
+    ">
+        <div style="grid-column: 1; grid-row: 1;">
+            <img src="{{ url_for('static', filename='images/aura-1.jpg') }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+
+        <div style="grid-column: 2; grid-row: 1 / span 2;">
+            <img src="{{ url_for('static', filename='images/aura-hero.jpg') }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+
+        <div style="grid-column: 3; grid-row: 1;">
+            <img src="{{ url_for('static', filename='images/aura-2.jpg') }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+
+        <div style="grid-column: 1; grid-row: 2;">
+            <img src="{{ url_for('static', filename='images/aura-detail-1.jpg') }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+
+        <div style="grid-column: 3; grid-row: 2;">
+            <img src="{{ url_for('static', filename='images/aura-detail-2.jpg') }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px 0;">
+        <a href="{{ url_for('recent_work') }}" style="font-family: 'Montserrat', sans-serif; text-decoration: none; color: #1a1a1a; letter-spacing: 2px; font-size: 0.8rem; border-bottom: 1px solid #1a1a1a;">BACK TO ALBUMS</a>
+    </footer>
+</div>
+{% endblock %}
