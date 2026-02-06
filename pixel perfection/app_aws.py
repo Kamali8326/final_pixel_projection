@@ -10,17 +10,10 @@ app.secret_key = "photo_booking_secret"
 # --- UPDATE THIS SECTION IN app_aws.py ---
 REGION = "us-east-1"
 
-# Go to your AWS Academy console, click "AWS Details", and copy these exactly:
-aws_session = boto3.Session(
-    aws_access_key_id='ASIxxxxxxxxxxxxxxx',       # Your actual Access Key
-    aws_secret_access_key='xxxxxxxxxxxxxxxxxxxx', # Your actual Secret Key
-    aws_session_token='xxxxxxxxxxxxxxxxxxxx...', # MUST include the long session token
-    region_name=REGION
-)
 
 dynamodb = aws_session.resource("dynamodb")
 sns = aws_session.client("sns")
-SNS_TOPIC_ARN = "arn:aws:sns:us-east-1:YOUR_ACCOUNT_ID:photo_booking_topic"
+SNS_TOPIC_ARN = "arn:aws:sns:us-east-1:145023099836:aws_capstone_topic"
 
 # DynamoDB Tables
 clients_table = dynamodb.Table("Clients")
@@ -174,4 +167,5 @@ def logout():
     return redirect(url_for('index'))
 
 if __name__ == "__main__":
+
     app.run(host="0.0.0.0", port=5000, debug=True)
