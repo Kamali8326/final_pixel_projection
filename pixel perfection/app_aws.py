@@ -15,7 +15,11 @@ dynamodb = boto3.resource(
     "dynamodb",
     region_name="us-east-1"
 )
-sns = aws_session.client("sns")
+sns = boto3.client(
+    "sns",
+    region_name="us-east-1"
+)
+
 SNS_TOPIC_ARN = "arn:aws:sns:us-east-1:145023099836:aws_capstone_topic"
 
 # DynamoDB Tables
@@ -172,4 +176,5 @@ def logout():
 if __name__ == "__main__":
 
     app.run(host="0.0.0.0", port=5000, debug=True)
+
 
